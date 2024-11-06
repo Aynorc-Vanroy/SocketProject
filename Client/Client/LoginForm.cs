@@ -32,7 +32,7 @@ namespace Client
             //获取远程Web服务地址及初始化对象
             Common.AppContext.AppServiceConfig = AppServiceConfigUtility.Load();
             fastPrintNetClient = new FastPrintNetService();
-            fastPrintNetClient.Url = string.Concat(Common.AppContext.AppServiceConfig.RemoteWebServiceURL.TrimEnd(new char[] { '/' }), "/FastPrintNetService.asmx");
+            fastPrintNetClient.Url = string.Concat(AppServiceConfig.RemoteWebServiceURL.TrimEnd(new char[] { '/' }), "/FastPrintNetService.asmx");
             fastPrintNetClient.EnableDecompression = true;
 
             Control.CheckForIllegalCrossThreadCalls = false;

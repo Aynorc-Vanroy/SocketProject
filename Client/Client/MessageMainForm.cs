@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Client.Common;
+using Client.Model;
 using Client.RemoteFastPrintNetService;
 using Client.Utility;
 using AppContext = Client.Common.AppContext;
@@ -44,7 +45,7 @@ namespace Client
                 tmrHeartBeat = new System.Threading.Timer(HeartBeatCallBack, null, mHeartBeatInterval, mHeartBeatInterval);
                 //初始化远程服务对象
                 fastPrintNetClient = new FastPrintNetService();
-                fastPrintNetClient.Url = string.Concat(System.AppContext.AppServiceConfig.RemoteWebServiceURL.TrimEnd(new char[] { '/' }), "/FastPrintNetService.asmx");
+                fastPrintNetClient.Url = string.Concat(AppServiceConfig.RemoteWebServiceURL.TrimEnd(new char[] { '/' }), "/FastPrintNetService.asmx");
                 fastPrintNetClient.EnableDecompression = true;
                 fastPrintNetClient.GetServiceRunStatus();//检查接口状态
                 this.WebServiceConneted = true;
@@ -158,8 +159,8 @@ namespace Client
         {
             get
             {
-                string ip = System.AppContext.AppServiceConfig.Socket_Server_Address.Split(new char[] { ':' })[0];
-                string port = System.AppContext.AppServiceConfig.Socket_Server_Address.Split(new char[] { ':' })[1];
+                string ip = AppServiceConfig.Socket_Server_Address.Split(new char[] { ':' })[0];
+                string port = AppServiceConfig.Socket_Server_Address.Split(new char[] { ':' })[1];
                 IPAddress ipAddress;
                 System.Net.IPAddress.TryParse(ip, out ipAddress);
                 if (ipAddress == null)//如果不是有效的数字IP地址，则通过域名去解析。

@@ -5,13 +5,11 @@ namespace Client.Model
     {
         /// 远程web服务器IP地址
         /// </summary>
-        public string RemoteWebServiceURL { get; set; }
+        public static string RemoteWebServiceURL { get; set; }
 
         /// <summary>
         /// 服务器IP地址及端口
         /// </summary>
-        public string Socket_Server_Address { get; set; }
-
-   
+        public static string Socket_Server_Address { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using System.Web.Script.Services;
 using System.Web.Services;
 using Model;
+using Server.Service;
 
 namespace Server
 {
@@ -12,7 +13,7 @@ namespace Server
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // 若要允许使用 ASP.NET AJAX 从脚本中调用此 Web 服务，请取消注释以下行。 
-    [System.Web.Script.Services.ScriptService]
+    [ScriptService]
     public class FastPrintNetService : WebService
     {
         private static readonly IFastPrintNetService fastPrintNetService = new DefaultFastPrintNetService();

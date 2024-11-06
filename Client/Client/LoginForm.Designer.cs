@@ -51,7 +51,7 @@
             this.lblContent.Name = "lblContent";
             this.lblContent.Size = new System.Drawing.Size(463, 48);
             this.lblContent.TabIndex = 6;
-            this.lblContent.Text = "基于SuperSocket实现网页与客户端通信实战项目演练";
+            this.lblContent.Text = "基于SuperSocket实现网页与客户端通信";
             this.lblContent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
