@@ -11,7 +11,7 @@ namespace Client
 {
     public class AppServiceConfigUtility
     {
-        private const string AppServiceConfigFileName = "AppServiceConfig.xml";
+        private const string AppServiceConfigFileName = "ClientNetConfig.xml";
 
         public static AppServiceConfig Load()
         {
